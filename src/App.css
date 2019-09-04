@@ -1,0 +1,16 @@
+.navText{
+    /* border: 2px solid black; */
+    display: inline-block;
+    margin-left: 20px;
+    padding: 1px;
+    padding-left: 5px;
+    border-radius: 3px;
+    /* border: 1px solid white; */
+}
+.navText:hover{
+    color: green;
+    background-color: #CC0000 ;
+}
+.popup-content{
+    width: 400px !important;
+}
