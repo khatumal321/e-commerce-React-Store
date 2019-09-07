@@ -19,7 +19,9 @@ const eCommercePage = (props) => {
         <MDBCardTitle>
           <a href="#!"><strong>{props.name}</strong></a>
         </MDBCardTitle>
-       <SimpleRating />
+        <center>
+          <SimpleRating/>
+        </center>
         <MDBCardText>
         {props.text}
         </MDBCardText>

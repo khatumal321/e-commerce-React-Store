@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Fragment } from "react";
+import { MDBRow, MDBCard, MDBCardBody, MDBTooltip, MDBTable, MDBTableBody, MDBTableHead, MDBInput, MDBBtn } from "mdbreact";
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -160,8 +161,10 @@ export default function PrimarySearchAppBar(props) {
       </MenuItem>
     </Menu>
   );
+  console.log(props,9999)
   // c
   return (
+
     <div className={classes.grow}>
       <AppBar position="static" style={{ backgroundColor: 'gray', marginBottom: '10px' }}>
         <Toolbar>
@@ -183,11 +186,12 @@ export default function PrimarySearchAppBar(props) {
 
           <Typography className={classes.title} variant="h6" noWrap>
             <div>
-              <a className='navText'>SnapDeal</a>
-              <a className='navText'>Login</a>
-              <a className='navText'>Signup</a>
-              <a className='navText'>Product</a>
-              <a className='navText'>Shop</a>
+              <a className='navText' href='/'>SnapDeal</a>
+              <a className='navText' href='/Login'>Login</a>
+              <a className='navText' href='/Signup'>Signup</a>
+              <a className='navText' href='/Product'>Product</a>
+              <a className='navText' href='/Shop'>Shop</a>
+              <a className='navText' href='/MyAdmin'>MyAdmin</a>
             </div>
           </Typography>
 
@@ -209,7 +213,6 @@ export default function PrimarySearchAppBar(props) {
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={props.myCard.length} color="secondary">
-
                 <Popup
                   trigger={<ShoppingCartIcon />}
                   position="bottom right"
@@ -217,22 +220,41 @@ export default function PrimarySearchAppBar(props) {
                   className="popup-content"
                 >
                   {
-                  props.myCard.length?
-                 props.myCard.map((val,i)=>{
-                   return(
-                     <div style={{backgroundColor: 'gray', margin: '10px'}}>
-                      <img src={val.image} width="80px" />
-                      <span style={{color: 'black'}}>{val.name}</span>
-                      <span style={{color: 'black'}}>{val.price}</span>
-                      <span style={{color: '#CC0000'}}>{val.count}</span>
-                     </div>
-                   )
-                 })
-                 :
-                    <div style={{
-                      color:"black"
-                    }}>Your Cart is Empty</div>
+                    props.myCard.length ?
+                      props.myCard.map((val, i) => {
+                        return (
+                          <div>
+                          <div style={{margin: '10px' }}>
+                             <MDBCard className="w-100">
+                            <div style={{display:'flex', backgroundColor: 'gray'}}>
+                               <img src={val.image} width="100px" className="img-fluid z-depth-0" style={{ verticalAlign: 'center' }} />
+                            <span style={{ color: 'white'  ,marginLeft:'4px', fontSize: '17px'}}>{val.name}</span>
+                            <span style={{ color: 'white' ,marginLeft:'6px', fontSize: '17px'}}>{val.price}</span>
+                            <span style={{ color: 'white' ,marginLeft:'4px' }}>Quan<br />{val.count}</span>
+                              <MDBTooltip placement="top">
+                              <MDBBtn color="red accent-4" size="sm">
+                                X
+                             </MDBBtn>
+                              <div>Remove item</div>
+                            </MDBTooltip>
+                            </div>
+                            </MDBCard>
+                          </div>
+                          </div>
+                        )
+                      })
+                      :
+                      <div style={{
+                        color: "black"
+                      }}>Your Cart is Empty</div>
                   }
+                        <Fragment>
+                        <MDBBtn 
+                        color='primary' 
+                        className="mr-1" 
+                        onClick={()=>props.path.history.push('/ViewAll',{data:props.myCard})}
+                        >View All</MDBBtn>
+                        </Fragment>
                 </Popup>
               </Badge>
             </IconButton>

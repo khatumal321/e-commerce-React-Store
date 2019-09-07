@@ -21,7 +21,7 @@ const CarouselPage = () => {
           <MDBCarouselItem itemId="1">
             <MDBView>
               <img
-               style={{height: '300px', backgroundSize: 'center', backgroundPosition: 'cover'}}
+               style={{height: '350px', backgroundSize: 'center', backgroundPosition: 'cover'}}
                 className="d-block w-100"
                 src={slider}
                 alt="First slide"
@@ -31,7 +31,7 @@ const CarouselPage = () => {
           <MDBCarouselItem itemId="2">
             <MDBView>
               <img
-               style={{height: '300px', backgroundSize: 'center', backgroundPosition: 'cover'}}
+               style={{height: '350px', backgroundSize: 'center', backgroundPosition: 'cover'}}
                 className="d-block w-100"
                 src={slider2}
                 alt="Second slide"
@@ -41,7 +41,7 @@ const CarouselPage = () => {
           <MDBCarouselItem itemId="3">
             <MDBView>
               <img
-               style={{height: '300px', backgroundSize: 'center', backgroundPosition: 'cover'}}
+               style={{height: '350px', backgroundSize: 'center', backgroundPosition: 'cover'}}
                 className="d-block w-100"
                 src={slider3}
                 alt="Third slide"

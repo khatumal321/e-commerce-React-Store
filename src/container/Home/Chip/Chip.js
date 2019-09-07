@@ -27,7 +27,7 @@ export default function Chips() {
         <div className={classes.root}>
             <Chip
                 icon={<FaceIcon />}
-                label="Deletable Secondary Chip"
+                label="HP Laptops"
                 onDelete={handleDelete}   
                 className={classes.chip}
                 color="gray"
@@ -35,26 +35,26 @@ export default function Chips() {
 
             <Chip
                 icon={<FaceIcon />}
-                label="Deletable Secondary Chip"
+                label="Deal Daptops"
                 onDelete={handleDelete}
                 className={classes.chip}
-                color="secondary"
+                color="gray"
             />
 
             <Chip
                 icon={<FaceIcon />}
-                label="Deletable Secondary Chip"
+                label="Apple"
                 onDelete={handleDelete}
                 className={classes.chip}
-                color="secondary"
+                color="gray"
             />
 
             <Chip
                 icon={<FaceIcon />}
-                label="Deletable Secondary Chip"
+                label="lenovo"
                 onDelete={handleDelete}
                 className={classes.chip}
-                color="secondary"
+                color="gray"
             />
         </div>
     );

@@ -27,7 +27,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div>
-                <Appbar myCard={this.state.myCard}/>
+                <Appbar myCard={this.state.myCard} path={this.props}/>
                 <CarouselPage />
                 <Grid container justify='center' >
                     <Grid item lg={8}>
@@ -47,10 +47,10 @@ export default class Home extends React.Component {
                     priceValue='PKR 60000'
                     text='HP SPECTRE 13-AP0082TU (Touch-X360) Core i7 8565U - 16GB RAM - 512GB SSD - Win 10 - 13.3" FHD LED - Intel HD Graphics - Wifi - Bluetooth - 1 Year HP Card Warranty'
                 />
-                <Cards 
+               <Cards 
                 path={this.props}
                 image={Image2} 
-                name='hp laptop2'
+                name='hp laptop5' 
                 priceValue='PKR 241,000.00'
                 text='Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates. Temporibus autem quibusdam. Lorem Ipsum dolor ament.' />
                 <Cards 
@@ -65,12 +65,43 @@ export default class Home extends React.Component {
                 name='hp laptop4' 
                 priceValue='PKR 241,000.00'
                 text='Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates. Temporibus autem quibusdam. Lorem Ipsum dolor ament.' />
-                <Cards 
+                 <Cards 
                 path={this.props}
                 image={Image5} 
-                name='hp laptop5' 
+                name='Lenovo ThinkPad'
+                priceValue='Rs. 24,699'
+                text='Tuptates. Temporibus autem quibusdam. Lorem Ipsum dolor ament.' />
+                <Cards 
+                path={this.props}
+                image={Image3} 
+                name='hp laptop3' 
                 priceValue='PKR 241,000.00'
                 text='Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates. Temporibus autem quibusdam. Lorem Ipsum dolor ament.' />
+                <Cards 
+                path={this.props}
+                image={Image3} 
+                name='hp laptop3' 
+                priceValue='PKR 241,000.00'
+                text='Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates. Temporibus autem quibusdam. Lorem Ipsum dolor ament.' />
+                <Cards 
+                path={this.props}
+                image={Image3} 
+                name='hp laptop3' 
+                priceValue='PKR 241,000.00'
+                text='Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates. Temporibus autem quibusdam. Lorem Ipsum dolor ament.' />
+                <Cards 
+                path={this.props}
+                image={Image3} 
+                name='hp laptop3' 
+                priceValue='PKR 241,000.00'
+                text='Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates. Temporibus autem quibusdam. Lorem Ipsum dolor ament.' />
+                <Cards 
+                path={this.props}
+                image={Image3} 
+                name='hp laptop3' 
+                priceValue='PKR 241,000.00'
+                text='Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates. Temporibus autem quibusdam. Lorem Ipsum dolor ament.' />
+            
             </div>
         )
     }

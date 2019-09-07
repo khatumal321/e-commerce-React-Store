@@ -7,10 +7,17 @@
     border-radius: 3px;
     /* border: 1px solid white; */
 }
+.navText{
+    color: white;
+}
 .navText:hover{
-    color: green;
-    background-color: #CC0000 ;
+    color: #CC0000;
 }
 .popup-content{
     width: 400px !important;
 }
+.form {
+    text-align: center;
+    margin: 20px;
+}
+
