@@ -1,15 +1,20 @@
-import firebase from 'firebase'
-var firebaseConfig = {
-  apiKey: "AIzaSyDFDbb1jmRhyTaMLrcYnb0L-EJADUBb1xQ",
-  authDomain: "raisingstar-5504c.firebaseapp.com",
-  databaseURL: "https://raisingstar-5504c.firebaseio.com",
-  projectId: "raisingstar-5504c",
-  storageBucket: "raisingstar-5504c.appspot.com",
-  messagingSenderId: "1075371251867",
-  appId: "1:1075371251867:web:fb856f1236e955b8ac0e3e"
+ import firebase from 'firebase'
+ import 'firebase/firestore'
+ import 'firebase/storage'
+ // Your web app's Firebase configuration
+ var firebaseConfig = {
+  apiKey: "AIzaSyAdjrQ_Y6TjQypT9nwf04UW0VEP1TeZCuw",
+  authDomain: "e-commerce-web-9ca3e.firebaseapp.com",
+  databaseURL: "https://e-commerce-web-9ca3e.firebaseio.com",
+  projectId: "e-commerce-web-9ca3e",
+  storageBucket: "e-commerce-web-9ca3e.appspot.com",
+  messagingSenderId: "119918748146",
+  appId: "1:119918748146:web:e6c9aee54a2a371fca0b6b"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+let firebaseApp = firebase.initializeApp(firebaseConfig);
+export default firebaseApp
+
 
 
 

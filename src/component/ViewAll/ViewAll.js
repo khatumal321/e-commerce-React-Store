@@ -99,8 +99,8 @@ class eCommercePage extends React.Component {
                         <img src={val.image} alt="" width='200px' className="img-fluid z-depth-0" />
                         <h5 className="mt-3" key={new Date().getDate + 1}><strong>{val.name}</strong></h5>
                         <p key={new
-                          Date().getDate} className="text-muted">{val.count}</p>
-                        {val.price}
+                          Date().getDate} className="text-muted">Quantity: {val.count}</p>
+                        {/* {val.price} */}
                         <MDBInput type="number" className="form-control"  style={{ width: "100px" }} />
                         <strong>${val.price}</strong>
                         <MDBTooltip placement="top">

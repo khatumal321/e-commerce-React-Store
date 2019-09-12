@@ -10,12 +10,14 @@ import Image3 from './Cards/cardsPic/image3.jpg'
 import Image4 from './Cards/cardsPic/image4.jpg'
 import Image5 from './Cards/cardsPic/image5.jpg'
 import Appbar from '../../component/Appbar/Appbar'
+import firebase from '../../Config/Firebase/Firebase'
 
 export default class Home extends React.Component {
     constructor() {
         super()
         this.state = {
-            myCard: []
+            myCard: [],
+            products:[]
         }
     }
     componentDidMount() {
@@ -23,7 +25,20 @@ export default class Home extends React.Component {
         this.setState({
             myCard: JSON.parse(localStorage.getItem('mycart')),
         })
-    }
+        let { products } = this.state
+        firebase.firestore().collection("Products").get()
+            .then(myCard => {
+                myCard.forEach(doc => {
+                    let getData = doc.data()
+                    products.push(getData)
+                    this.setState({
+                        products: products
+                    })
+                })
+
+            })
+        }
+
     render() {
         return (
             <div>
@@ -40,14 +55,21 @@ export default class Home extends React.Component {
                     </Grid>
                 </Grid>
                 <Chip />
+                {
+             this.state.products.map((val,i)=>{
+             return(
                 <Cards
-                    path={this.props}
-                    image={Image1}
-                    name='HP Spectre'
-                    priceValue='PKR 60000'
-                    text='HP SPECTRE 13-AP0082TU (Touch-X360) Core i7 8565U - 16GB RAM - 512GB SSD - Win 10 - 13.3" FHD LED - Intel HD Graphics - Wifi - Bluetooth - 1 Year HP Card Warranty'
+                path={this.props}
+                image={val.productimage}
+                name={val.productname}
+                priceValue={val.productprice}
+                text={val.productdescription}
                 />
-               <Cards 
+             )
+             })
+
+                }
+               {/* <Cards 
                 path={this.props}
                 image={Image2} 
                 name='hp laptop5' 
@@ -101,7 +123,7 @@ export default class Home extends React.Component {
                 name='hp laptop3' 
                 priceValue='PKR 241,000.00'
                 text='Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates. Temporibus autem quibusdam. Lorem Ipsum dolor ament.' />
-            
+             */}
             </div>
         )
     }
